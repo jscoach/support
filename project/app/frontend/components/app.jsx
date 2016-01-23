@@ -37,10 +37,13 @@ const App = React.createClass({
   },
   render () {
     let menuOptions = [{
+      title: 'Submit a Package',
+      href: 'https://github.com/dmfrancisco/JS.coach/blob/master/CONTRIBUTING.md'
+    }, {
       title: 'Feedback',
       href: 'https://github.com/dmfrancisco/JS.coach'
     }, {
-      title: 'Blog',
+      title: 'Changelog',
       href: 'http://blog.js.coach'
     }, {
       title: 'Twitter',
