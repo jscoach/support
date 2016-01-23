@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+pending:
+  name: Pending Package
+  state: pending
+
+<% 11.times do |i| %>
+published_<%= i+1 %>: &published_<%= i+1 %>
+  name: package-<%= (i+1).to_s(16).upcase %>
+  state: published
+  collections:
+    - one
+    - two
+  original_repo: repo-user/repo-name
+  original_description: Example description
+  modified_at: 2015-01-<%= (30 - i).to_s.rjust(2, '0') %> 10:01:00
+  published_at: 2014-02-<%= (30 - i).to_s.rjust(2, '0') %> 10:01:00
+  latest_release: 0.14.3
+  is_fork: false
+  stars: <%= 42+i %>
+  languages: <%= { "JavaScript" => 42, "CSS" => 42 }.to_json %>
+  last_week_downloads: 24
+  last_month_downloads: 48
+  readme: <%= "ReadMe of package #{ i+1 }. " * 20 %>
+  downloads: <%= [{ day: "2012-10-22", downloads: 85 }, { day: "2012-10-23", downloads: 395 }].to_json %>
+  manifest: <%= { "name": "Ready Package", "repo": "repo-user/repo-name" }.to_json %>
+  dependents: 42
+
+accepted_<%= i+1 %>:
+  <<: *published_<%= i+1 %>
+  name: accepted-package-<%= (i+1).to_s(16).upcase %>
+  state: accepted
+<% end %>

@@ -1,0 +1,294 @@
+{
+  "_id": "react",
+  "_rev": "349-9bd7ec5964a7d9aae4473eceed7eb71e",
+  "name": "react",
+  "description": "React is a JavaScript library for building user interfaces.",
+  "dist-tags": {
+    "latest": "0.14.3",
+    "0.10.0-rc1": "0.10.0-rc1",
+    "0.11.0-rc1": "0.11.0-rc1",
+    "next": "0.14.0-rc1"
+  },
+  "versions": {
+    "0.0.1": {
+      "name": "react",
+      "description": "React is a javascript module to make it easier to work with asynchronous code, by reducing boilerplate code and improving error and exception handling while allowing variable and task dependencies when defining flow.",
+      "version": "0.0.1",
+      "author": {
+        "name": "Jeff Barczewski",
+        "email": "jeff.barczewski@gmail.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jeffbski/react.git"
+      },
+      "bugs": {
+        "url": "http://github.com/jeffbski/react/issues"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://github.com/jeffbski/react/raw/master/LICENSE"
+        }
+      ],
+      "main": "react",
+      "engines": {
+        "node": "~v0.4.12"
+      },
+      "dependencies": {},
+      "devDependencies": {},
+      "_npmUser": {
+        "name": "jeffbski",
+        "email": "jeff.barczewski@gmail.com"
+      },
+      "_id": "react@0.0.1",
+      "_engineSupported": true,
+      "_npmVersion": "1.0.103",
+      "_nodeVersion": "v0.4.12",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "c84d3dbff0c65577a52f0bfe431f8bcc155fa365",
+        "tarball": "http://registry.npmjs.org/react/-/react-0.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "jeffbski",
+          "email": "jeff.barczewski@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.2": {
+      "name": "react",
+      "description": "React is a javascript module to make it easier to work with asynchronous code, by reducing boilerplate code and improving error and exception handling while allowing variable and task dependencies when defining flow.",
+      "version": "0.0.2",
+      "author": {
+        "name": "Jeff Barczewski",
+        "email": "jeff.barczewski@gmail.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jeffbski/react.git"
+      },
+      "bugs": {
+        "url": "http://github.com/jeffbski/react/issues"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://github.com/jeffbski/react/raw/master/LICENSE"
+        }
+      ],
+      "main": "react",
+      "engines": {
+        "node": "~v0.4.12"
+      },
+      "dependencies": {},
+      "devDependencies": {},
+      "_npmUser": {
+        "name": "jeffbski",
+        "email": "jeff.barczewski@gmail.com"
+      },
+      "_id": "react@0.0.2",
+      "_engineSupported": true,
+      "_npmVersion": "1.0.103",
+      "_nodeVersion": "v0.4.12",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "3cf0fbb146714879c0de7069e8cabb21f2cb523f",
+        "tarball": "http://registry.npmjs.org/react/-/react-0.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "jeffbski",
+          "email": "jeff.barczewski@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.14.2": {
+      "name": "react",
+      "description": "React is a JavaScript library for building user interfaces.",
+      "version": "0.14.2",
+      "keywords": [
+        "react"
+      ],
+      "homepage": "https://github.com/facebook/react/tree/master/npm-react",
+      "bugs": {
+        "url": "https://github.com/facebook/react/issues"
+      },
+      "license": "BSD-3-Clause",
+      "files": [
+        "addons.js",
+        "react.js",
+        "addons/",
+        "dist/",
+        "lib/"
+      ],
+      "main": "react.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/facebook/react.git"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "dependencies": {
+        "envify": "^3.0.0",
+        "fbjs": "^0.3.1"
+      },
+      "browserify": {
+        "transform": [
+          "envify"
+        ]
+      },
+      "_id": "react@0.14.2",
+      "_shasum": "694d3eabdfde56ec2ba1b4db7d160c9a6fe9ce6a",
+      "_resolved": "file:build/packages/react.tgz",
+      "_from": "build/packages/react.tgz",
+      "scripts": {},
+      "_npmVersion": "2.14.9",
+      "_nodeVersion": "4.2.0",
+      "_npmUser": {
+        "name": "zpao",
+        "email": "paul@oshannessy.com"
+      },
+      "maintainers": [
+        {
+          "name": "zpao",
+          "email": "paul@oshannessy.com"
+        },
+        {
+          "name": "jeffmo",
+          "email": "jeff@anafx.com"
+        },
+        {
+          "name": "sebmarkbage",
+          "email": "sebastian@calyptus.eu"
+        },
+        {
+          "name": "spicyj",
+          "email": "ben@benalpert.com"
+        }
+      ],
+      "dist": {
+        "shasum": "694d3eabdfde56ec2ba1b4db7d160c9a6fe9ce6a",
+        "tarball": "http://registry.npmjs.org/react/-/react-0.14.2.tgz"
+      },
+      "directories": {}
+    },
+    "0.14.3": {
+      "name": "react",
+      "description": "React is a JavaScript library for building user interfaces.",
+      "version": "0.14.3",
+      "keywords": [
+        "react"
+      ],
+      "homepage": "https://github.com/facebook/react/tree/master/npm-react",
+      "bugs": {
+        "url": "https://github.com/facebook/react/issues"
+      },
+      "license": "BSD-3-Clause",
+      "files": [
+        "LICENSE",
+        "PATENTS",
+        "addons.js",
+        "react.js",
+        "addons/",
+        "dist/",
+        "lib/"
+      ],
+      "main": "react.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/facebook/react.git"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "dependencies": {
+        "envify": "^3.0.0",
+        "fbjs": "^0.3.1"
+      },
+      "browserify": {
+        "transform": [
+          "envify"
+        ]
+      },
+      "_id": "react@0.14.3",
+      "_shasum": "b82e7b049ee3e1e264d24ae7ea20d76e51126778",
+      "_resolved": "file:build/packages/react.tgz",
+      "_from": "build/packages/react.tgz",
+      "scripts": {},
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.2",
+      "_npmUser": {
+        "name": "zpao",
+        "email": "paul@oshannessy.com"
+      },
+      "maintainers": [
+        {
+          "name": "zpao",
+          "email": "paul@oshannessy.com"
+        },
+        {
+          "name": "jeffmo",
+          "email": "jeff@anafx.com"
+        },
+        {
+          "name": "sebmarkbage",
+          "email": "sebastian@calyptus.eu"
+        },
+        {
+          "name": "spicyj",
+          "email": "ben@benalpert.com"
+        }
+      ],
+      "dist": {
+        "shasum": "b82e7b049ee3e1e264d24ae7ea20d76e51126778",
+        "tarball": "http://registry.npmjs.org/react/-/react-0.14.3.tgz"
+      },
+      "directories": {}
+    }
+  },
+  "maintainers": [
+    {
+      "name": "zpao",
+      "email": "paul@oshannessy.com"
+    },
+    {
+      "name": "jeffmo",
+      "email": "jeff@anafx.com"
+    }
+  ],
+  "time": {
+    "modified": "2015-11-19T02:26:57.036Z",
+    "created": "2011-10-26T17:46:21.942Z",
+    "0.0.1": "2011-10-26T17:46:22.746Z",
+    "0.0.2": "2011-10-28T22:40:36.115Z",
+    "0.14.2": "2015-11-02T19:55:21.088Z",
+    "0.14.3": "2015-11-19T02:26:57.036Z"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/facebook/react.git"
+  },
+  "readme": "# react\n\nAn npm package to get you immediate access to [React](https://facebook.github.io/react/),\nwithout also requiring the JSX transformer. This is especially useful for cases where you\nwant to [`browserify`](https://github.com/substack/node-browserify) your module using\n`React`.\n\n**Note:** by default, React will be in development mode. The development version includes extra warnings about common mistakes, whereas the production version includes extra performance optimizations and strips all error messages.\n\nTo use React in production mode, set the environment variable `NODE_ENV` to `production`. A minifier that performs dead-code elimination such as [UglifyJS](https://github.com/mishoo/UglifyJS2) is recommended to completely remove the extra code present in development mode.\n\n## Example Usage\n\n```js\nvar React = require('react');\n\n// Addons are in separate packages:\nvar createFragment = require('react-addons-create-fragment');\nvar immutabilityHelpers = require('react-addons-update');\nvar CSSTransitionGroup = require('react-addons-css-transition-group');\n```\n\nFor a complete list of addons visit the [addons documentation page](https://facebook.github.io/react/docs/addons.html).\n",
+  "readmeFilename": "README.md",
+  "homepage": "https://github.com/facebook/react/tree/master/npm-react",
+  "keywords": [
+    "react"
+  ],
+  "bugs": {
+    "url": "https://github.com/facebook/react/issues"
+  },
+  "users": {
+    "dubban": true,
+    "3boll": true,
+    "bausmeier": true,
+    "axelav": true,
+    "joakin": true
+  },
+  "license": "BSD-3-Clause",
+  "_attachments": {}
+}

@@ -1,0 +1,19 @@
+.container {
+  composes: section from "./layout/sidebar-sections.css";
+}
+
+.header {
+  composes: header from "./layout/sidebar-sections.css";
+}
+
+.content {
+  composes: content from "./layout/sidebar-sections.css";
+}
+
+.item {
+  composes: circle from "./layout/sidebar-sections.css";
+}
+
+.isActive {
+  composes: isActive from "./layout/sidebar-sections.css";
+}

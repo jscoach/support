@@ -1,0 +1,33 @@
+// SASS variable overrides must be declared before loading up Active Admin's styles.
+//
+// To view the variables that Active Admin provides, take a look at
+// `app/assets/stylesheets/active_admin/mixins/_variables.css.scss` in the
+// Active Admin source.
+
+/* New variables */
+$light-color: #e8e9ea !default;
+$lighter-color: lighten($light-color, 5%) !default;
+$vibrant-color: #ee8484 !default;
+$success-color: #34b97b !default;
+$info-color: #5dade2 !default;
+$breadcrumb-color: #8a949e !default;
+
+/* Override colors */
+$primary-color: #414649 !default;
+$text-color: $primary-color !default;
+$link-color: #9a5959 !default;
+$section-header-text-color: $primary-color !default;
+$current-menu-item-background: lighten($primary-color, 10%) !default;
+$hover-menu-item-background: lighten($primary-color, 10%) !default;
+$table-stripe-color: $lighter-color !default;
+$table-selected-color: #ecf1f5 !default;
+$error-color: #eb2d33 !default;
+$input-border-color: #c9d0d6 !default;
+
+/* Override some gradients */
+$secondary-gradient-start: $light-color !default;
+$secondary-gradient-stop:  $light-color !default;
+
+/* Custom fonts */
+@import url("//fonts.googleapis.com/css?family=Open+Sans:400,600");
+$font-family: "Open Sans", "Helvetica Neue", Arial, Helvetica, sans-serif;

@@ -1,0 +1,95 @@
+// SASS variable overrides must be declared before loading up Active Admin's styles.
+//
+// To view the variables that Active Admin provides, take a look at
+// `app/assets/stylesheets/active_admin/mixins/_variables.css.scss` in the
+// Active Admin source.
+//
+// For example, to change the sidebar width:
+// $sidebar-width: 242px;
+
+// Active Admin's got SASS!
+@import "active_admin/flat_theme/mixins";
+@import "active_admin/flat_theme/base";
+
+// Overriding any non-variable SASS must be done after the fact.
+// For example, to change the default status-tag color:
+//
+//   .status_tag { background: #6090DB; }
+
+// Styles for the generic search field
+#search {
+  display: inline;
+  margin-right: 16px;
+
+  input[type=search] {
+    -webkit-appearance: none;
+    outline: none;
+
+    background: #fff url(image_path('search.svg')) no-repeat 8px center;
+    border: none;
+    border-radius: 15px;
+    padding: 6px 3px 7px 28px;
+    vertical-align: middle;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 1.1em;
+
+    width: 165px;
+    -webkit-transition:width 0.5s ease-in-out;
+     -moz-transition:width 0.5s ease-in-out;
+          transition:width 0.5s ease-in-out;
+
+    &:focus, &:active {
+      width: 300px;
+    }
+    &::-webkit-search-cancel-button {
+      margin-right: 5px;
+    }
+  }
+}
+
+// Display buttons and search field side-by-side
+.action_items {
+  display: inline;
+}
+
+.table_tools {
+  // Display secondary navigation and scope tabs side-by-side
+  float: left;
+
+  // Show batch actions on the right
+  .batch_actions_selector {
+    float: right;
+  }
+
+  // Make sure scopes don't wrap below
+  .table_tools_segmented_control {
+    width: auto !important;
+    padding-right: $section-padding;
+  }
+}
+
+// Custom styles for the displaying readmes
+.readme {
+  h3 {
+    margin-bottom: 0;
+  }
+
+  .panel_contents {
+    background: #fff;
+    border: 1px solid $light-color;
+    border-top: 0;
+    margin: 0;
+    padding: $section-padding;
+  }
+
+  .markdown-body {
+    font-family: $font-family;
+  }
+}
+
+// Improve styles of <pre> elements in panels (used for displaying JSON)
+.panel_contents pre {
+  margin: 0;
+  background: #fff;
+  padding: 6px;
+}

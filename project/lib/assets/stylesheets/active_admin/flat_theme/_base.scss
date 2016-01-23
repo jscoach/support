@@ -1,0 +1,235 @@
+/* Active Admin default base */
+@import "active_admin/base";
+
+/* Custom styles */
+body.active_admin {
+  // Add the new font
+  font-family: $font-family;
+  -webkit-font-smoothing: antialiased;
+
+  // Header
+  #header {
+    @include flat;
+    padding-top: 3px;
+    padding-bottom: 7px;
+
+    h1.site_title {
+      padding-right: 20px;
+    }
+    h1.site_title, a, a:link {
+      font-family: $font-family;
+      color: $lighter-color;
+      font-weight: bold;
+    }
+    ul#tabs > li a {
+      padding-bottom: 6px;
+      @include rounded(20px);
+    }
+    ul#utility_nav {
+      padding-right: $horizontal-page-margin;
+      & > li {
+        list-style: none;
+        &:hover a {
+          background: none;
+        }
+        a:last-child {
+          padding-right: 0;
+        }
+      }
+    }
+  }
+
+  // Title bar
+  #title_bar {
+    @include flat;
+
+    // Buttons that are displayed on the right side
+    .action_item a {
+      font-family: $font-family;
+      background: $vibrant-color;
+      color: #fff;
+      border-top: 2px solid $vibrant-color;
+      border-bottom: 2px solid $link-color;
+      padding-top: 9px;
+      white-space: nowrap; // Buttons should not have more than one line
+
+      &:not(.disabled) {
+        &:hover, &:active {
+          color: #fff;
+        }
+        &:active {
+          margin-top: 2px;
+          border-top: none;
+          border-bottom-color: $vibrant-color;
+          color: transparent;
+          text-shadow: 0 2px #fff;
+        }
+      }
+    }
+  }
+
+  // Breadcrumbs
+  .breadcrumb {
+    &, a, a:link, a:visited, a:active {
+      color: $breadcrumb-color; // Display all with the same color, even the ones that are not links
+    }
+
+    // Since line-height:normal was added to page titles, this improves vertical alignment
+    margin-bottom: 3px;
+    margin-top: 5px;
+  }
+
+  // Table controls (batch actions and scopes)
+  .table_tools {
+    a.table_tools_button, .dropdown_menu_button {
+      @include flat;
+      background: darken($light-color, 10%);
+
+      &:hover {
+        background: darken($light-color, 10%);
+      }
+    }
+    li.selected a.table_tools_button { // Selected item
+      @include flat;
+      background: $light-color;
+    }
+  }
+
+  // Dropdown menus (used, for e.g., for batch actions)
+  .table_tools .dropdown_menu {
+    .dropdown_menu_button {
+      &, &:not(.disabled):active, &:not(.disabled):hover {
+        @include flat;
+        background: $vibrant-color;
+        color: #fff;
+      }
+      &:after {
+        border-color: #fff transparent; // The little arrow should also be white
+      }
+    }
+    .dropdown_menu_list_wrapper {
+      @include flat;
+      background: $primary-color;
+
+      .dropdown_menu_list {
+        @include flat;
+        li a {
+          padding-bottom: 7px;
+          color: $text-color;
+
+          &:hover, &:active {
+            color: $text-color;
+            text-shadow: none;
+            background: $light-color;
+          }
+        }
+      }
+    }
+    .dropdown_menu_nipple {
+      &, &:before, &:after {
+        border-color: $primary-color transparent;
+      }
+    }
+  }
+
+  // Tables
+  table.index_table {
+    td, th, th:last-child {
+      @include flat;
+    }
+  }
+  table tbody tr td {
+    -webkit-font-smoothing: subpixel-antialiased;
+    font-family: $font-family;
+  }
+  .attributes_table table th, .sidebar_section label {
+    -webkit-font-smoothing: subpixel-antialiased;
+    font-size: 11px;
+    font-weight: normal;
+  }
+
+  // Panels
+  #main_content, .panel {
+    @include flat;
+
+    h1, h2, h3, h4, h5, h6, span {
+      @include flat;
+    }
+  }
+  .panel {
+    // More whitespace in tables inside panels
+    td, th {
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+    td {
+      padding-bottom: 10px;
+      padding-top: 10px;
+    }
+  }
+
+  // Forms
+  form {
+    // Apply the new font to submit buttons too
+    input[type=submit] {
+      font-family: $font-family;
+    }
+    // Bigger border in fields. Since this would change the space occupied by the field,
+    // instead of increasing the border width, an inset shadow is added with the same color.
+    input[type=text], input[type=password], input[type=email],
+    input[type=url], input[type=tel], input[type=number], textarea {
+      border-color: $input-border-color;
+      box-shadow: -1px -1px 0 $input-border-color inset, 1px 1px 0 $input-border-color inset;
+    }
+    // Bigger border in fields with errors
+    fieldset > ol > li.error {
+      input[type=text], input[type=password], input[type=email],
+      input[type=url], input[type=tel], input[type=number], textarea {
+        box-shadow: -1px -1px 0 $error-color inset, 1px 1px 0 $error-color inset;
+      }
+    }
+  }
+
+  // Icons
+  span.icon {
+    width: auto;
+    height: auto;
+    svg { // Don't force size, because it breaks the `icon(:key, width: w, height: h)` api
+      width: auto;
+      height: auto;
+    }
+  }
+
+  // Flash notices
+  &.logged_in .flash {
+    @include flat;
+    padding-bottom: 14px; // Add some more padding
+    background: $info-color;
+    color: #fff;
+
+    &.flash_notice {
+      @include flat;
+      background: $success-color;
+      color: #fff;
+    }
+    &.flash_error {
+      @include flat;
+      background: $error-color;
+      color: #fff;
+    }
+  }
+  &.logged_out .flash {
+    @include flat;
+  }
+
+  // Footer
+  #footer {
+    padding-top: 10px;
+    font-size: 11px;
+    color: $primary-color;
+
+    a, a:hover, a:link, a:visited {
+      color: $primary-color;
+    }
+  }
+}

@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="jess" src="https://gc.david.tools/jess-support.png?0" width="190" height="190">
+  <img alt="jess" src="https://js.coach/support.png" width="190" height="190">
 </p>
 
 <h6 align="center">

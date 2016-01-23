@@ -1,0 +1,102 @@
+/*= require normalize.css/normalize.css */
+/*= require github-markdown-css-with-rem/github-markdown.css */
+/*= require animate.css */
+
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,500|Roboto+Condensed:300|Roboto+Mono");
+
+.markdown-body {
+  $font-sans: Roboto, sans-serif;
+  $font-mono: Roboto Mono, monospace;
+  $grey: #e6e6e6;
+  $light-grey: #f7f7f7;
+  $blue: #4b67a5;
+
+  font-family: $font-sans;
+  color: #000;
+  cursor: auto;
+
+  h1, h2 {
+    border-color: $grey;
+    font-weight: 700;
+  }
+  h3, h4, h5, h6 {
+    font-weight: 600;
+  }
+  h1 {
+    font-size: 2em;
+  }
+  h2 {
+    font-size: 1.6em;
+  }
+  h3 {
+    font-size: 1.4em;
+  }
+  a {
+    color: $blue;
+  }
+  :checked+.radio-label {
+    border-color: $blue;
+  }
+  hr {
+    background-color: $grey;
+    height: 2px;
+  }
+  table th,
+  table td {
+    border-color: $grey;
+  }
+  code, pre, kbd {
+    font-family: $font-mono;
+  }
+
+  /* We convert headings into anchored hyperlinks, but hide it visually for now */
+  h1, h2, h3, h4, h5, h6 {
+    a {
+      color: inherit;
+    }
+    a:hover,
+    a:active {
+      text-decoration: none;
+    }
+  }
+
+  /* If a redundant package name or description is found in the readme, hide them */
+  .package-name-redundant,
+  .package-description-redundant {
+    display: none;
+  }
+  & > .package-name-redundant:first-child + * {
+    margin-top: 0 !important;
+  }
+  & > .package-name-redundant:first-child + .package-description-redundant + * {
+    margin-top: 0 !important;
+  }
+
+  /* Removes top blank space that doesn't look good when the package
+   * name is hidden and there are badges below */
+  &:before {
+    display: none;
+  }
+
+  img {
+    border-radius: 3px;
+  }
+
+  /* A placeholder for while images are loading. It has the same height of badges.
+   * List from `marky-markdown (http://git.io/vEzmx) `*/
+  img[data-canonical-src*='badge.fury.io'],
+  img[data-canonical-src*='badges.github.io'],
+  img[data-canonical-src*='badges.gitter.im'],
+  img[data-canonical-src*='ci.testling.com'],
+  img[data-canonical-src*='coveralls.io'],
+  img[data-canonical-src*='david-dm.org'],
+  img[data-canonical-src*='img.shields.io'],
+  img[data-canonical-src*='nodei.co'],
+  img[data-canonical-src*='saucelabs.com'],
+  img[data-canonical-src*='secure.travis-ci.org'],
+  img[data-canonical-src*='travis-ci.org'] {
+    background: $light-grey;
+    min-height: 20px;
+    min-width: 20px;
+  }
+}

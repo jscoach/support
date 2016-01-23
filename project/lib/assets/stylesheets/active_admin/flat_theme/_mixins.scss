@@ -1,0 +1,58 @@
+/* SASS variable overrides */
+@import "variables";
+
+/* Active Admin default mixins */
+@import "active_admin/mixins";
+
+/* Custom mixins */
+@mixin flat {
+  text-shadow: none;
+  border: none;
+  box-shadow: none;
+}
+
+/* Overide some gradients */
+@mixin primary-gradient {
+  background: $primary-color;
+  border-bottom: 1px solid $primary-color;
+}
+
+/* Override the buttons */
+@mixin custom-basic-button {
+  @include basic-button;
+  @include flat;
+  @include rounded(4px);
+  // Make the button 4 pixels taller
+  padding-top: 9px;
+  padding-bottom: 8px;
+  // Add the new font to buttons too
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+@mixin default-button {
+  @include custom-basic-button;
+  background: $primary-color;
+  color: #fff;
+
+  &:not(.disabled) {
+    &:hover, &:active {
+      background: darken($primary-color, 10%);
+      color: #fff;
+    }
+  }
+}
+@mixin light-button {
+  @include custom-basic-button;
+  background: #fff;
+  color: $primary-color;
+
+  &:not(.disabled) {
+    &:hover, &:active {
+      color: darken($primary-color, 10%);
+    }
+  }
+}
+
+/* Other overridden mixins */
+@mixin section-background {
+  background: $lighter-color;
+}
