@@ -18,6 +18,7 @@ class Collection < ActiveRecord::Base
     collections << Collection.find("babel")        if self.assign_babel? pkg
     collections << Collection.find("postcss")      if self.assign_postcss? pkg
     collections << Collection.find("reactive")     if self.assign_reactive? pkg
+    collections << Collection.find("angular-2")    if self.assign_angular2? pkg
     collections
   end
 
@@ -87,6 +88,15 @@ class Collection < ActiveRecord::Base
     return true if pkg.name =~ /^(kefir[\-\.])/i
     return true if pkg.keywords.any? { |k| k =~ /^(kefir([\-\.]js)?)/ }
 
+    return false
+  end
+
+  def self.assign_angular2?(pkg)
+    return true if pkg.name.downcase.include? "ng2-"
+    return true if pkg.name.downcase.ends_with? "-ng2"
+    return true if pkg.name.downcase.include? "angular2-"
+    return true if pkg.name.downcase.ends_with? "-angular2"
+    return true if pkg.keywords.any? { |k| k =~ /^(angular[\-\s]?2)$/ }
     return false
   end
 end

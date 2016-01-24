@@ -17,6 +17,7 @@ Collection.find_or_create_by(name: "Browserify").update(position: 3)
 Collection.find_or_create_by(name: "Babel").update(position: 4)
 Collection.find_or_create_by(name: "PostCSS").update(position: 5)
 Collection.find_or_create_by(name: "Reactive").update(default: false)
+Collection.find_or_create_by(name: "Angular 2").update(default: false)
 
 JsCoach.log "Default collections created or updated."
 
