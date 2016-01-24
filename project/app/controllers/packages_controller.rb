@@ -136,7 +136,7 @@ class PackagesController < ApplicationController
   end
 
   def collections
-    @_collections ||= Collection.all
+    @_collections ||= Collection.where(default: true)
   end
 
   def collection

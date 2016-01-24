@@ -83,7 +83,8 @@ CREATE TABLE collections (
     slug character varying NOT NULL,
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL,
-    "position" integer
+    "position" integer,
+    "default" boolean DEFAULT true
 );
 
 
@@ -654,4 +655,6 @@ INSERT INTO schema_migrations (version) VALUES ('20160111125910');
 INSERT INTO schema_migrations (version) VALUES ('20160114022622');
 
 INSERT INTO schema_migrations (version) VALUES ('20160117234848');
+
+INSERT INTO schema_migrations (version) VALUES ('20160124163600');
 
