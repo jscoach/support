@@ -17,6 +17,7 @@ class Collection < ActiveRecord::Base
     collections << Collection.find("browserify")   if self.assign_browserify? pkg
     collections << Collection.find("babel")        if self.assign_babel? pkg
     collections << Collection.find("postcss")      if self.assign_postcss? pkg
+    collections << Collection.find("reactive")     if self.assign_reactive? pkg
     collections
   end
 
@@ -68,6 +69,24 @@ class Collection < ActiveRecord::Base
     return true if pkg.keywords.any? { |k| k =~ /^(postcss[\-\s]?plugin)/ }
     return true if pkg.description.downcase.include? "postcss plugin"
     return true if pkg.name.downcase.include? "postcss"
+    return false
+  end
+
+  def self.assign_reactive?(pkg)
+    return true if pkg.name =~ /^(rx[\-\.])/i
+    return true if pkg.name.downcase.ends_with? "-rx"
+    return true if pkg.keywords.any? { |k| k =~ /^(rx([\-\.]js)?)/ }
+
+    return true if pkg.name =~ /^(cycle[\-\.])/i
+    return true if pkg.name =~ /^(cyclejs[\-\.])/i
+    return true if pkg.keywords.any? { |k| k =~ /^(cycle[\-\.]?js)/ }
+
+    return true if pkg.name =~ /^(bacon[\-\.])/i
+    return true if pkg.keywords.any? { |k| k =~ /^(bacon([\-\.]js)?)/ }
+
+    return true if pkg.name =~ /^(kefir[\-\.])/i
+    return true if pkg.keywords.any? { |k| k =~ /^(kefir([\-\.]js)?)/ }
+
     return false
   end
 end
