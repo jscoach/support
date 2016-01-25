@@ -13,7 +13,10 @@ namespace :app do
   desc "Tweet about a package"
   task :tweet => :environment do
     begin
-      package = Package.with_state(:published).where(tweeted: false).first
+      package = Package.with_collections
+        .with_state(:published)
+        .where("collections.default": true, tweeted: false)
+        .first
 
       if package.present?
         tweet = package.decorate.to_tweet
