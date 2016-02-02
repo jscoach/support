@@ -26,8 +26,8 @@ namespace :app do
       packages.each do |package|
         begin
           begin
-            # Pass `repo` in the `homepage` property to prevent GitHub from trying to
-            # find it again, in case it is not defined in the package.json
+            # Pass `repo` to prevent GitHub service from trying to find it again,
+            # in case it is not defined in the package.json
             hash = { name: package.name, custom_repo: package.repo }
 
             npm = NPM::Package.new(hash, fetch: true)

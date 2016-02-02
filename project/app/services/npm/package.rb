@@ -8,7 +8,8 @@ module NPM
       :last_month_downloads,
       :last_week_downloads,
       :license,
-      :name
+      :name,
+      :custom_repo
 
     # @param hash A package in JSON format from one of the NPM APIs
     # @param fetch If `true` fetches data from NPM registry
@@ -88,10 +89,9 @@ module NPM
       manifest.is_a?(Hash) ? manifest : nil
     end
 
-    def repo(repo_url = self.repo_url, homepage = @homepage, custom_repo = @custom_repo)
+    def repo(repo_url = self.repo_url, homepage = @homepage)
       repo_url_to_repo(repo_url) ||
-      repo_url_to_repo(homepage) || # Try to find repo using the homepage
-      custom_repo
+      repo_url_to_repo(homepage) # Try to find repo using the homepage
     end
 
     def repo_url(repository = @repository)

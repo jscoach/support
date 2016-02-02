@@ -28,8 +28,8 @@ module Github
     end
 
     def fetch_repo_data(npm_package = @npm_package)
-      if npm_package.repo.present?
-        Utils.repo(npm_package.repo)
+      if npm_package.custom_repo.present? or npm_package.repo.present?
+        Utils.repo(npm_package.custom_repo.presence || npm_package.repo)
       else
         Utils.repo_using_npm_users(npm_package.maintainer_users, npm_package.name)
       end
