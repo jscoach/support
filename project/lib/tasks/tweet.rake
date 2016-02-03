@@ -13,7 +13,7 @@ namespace :app do
   desc "Tweet about a package"
   task :tweet => :environment do
     begin
-      package = Package.with_collections
+      package = Package.joins(:collections)
         .with_state(:published)
         .where("collections.default": true, tweeted: false)
         .first
