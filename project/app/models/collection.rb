@@ -37,6 +37,7 @@ class Collection < ActiveRecord::Base
     return true if pkg.keywords.any? { |k| k =~ /^(react[\-\s]?component)/ }
     return true if pkg.name.downcase.include? "react-"
     return true if pkg.name.downcase.ends_with? "-react"
+    return true if pkg.name.downcase.include? "electrode-"
     return false
   end
 
