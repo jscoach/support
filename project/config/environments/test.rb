@@ -39,4 +39,7 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  # Use a different logger in order to rotate the logs (see goo.gl/RZ8BvZ)
+   config.logger = Logger.new(config.paths["log"].first, 1, 100.megabytes)
 end

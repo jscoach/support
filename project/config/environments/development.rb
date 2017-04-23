@@ -41,4 +41,7 @@ Rails.application.configure do
 
   # Details needed to generate URLs in emails
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  # Use a different logger in order to rotate the logs (see goo.gl/RZ8BvZ)
+   config.logger = Logger.new(config.paths["log"].first, 1, 100.megabytes)
 end
