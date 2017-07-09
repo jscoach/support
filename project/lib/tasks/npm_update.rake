@@ -23,7 +23,7 @@ namespace :app do
     end
 
     Task.new(packages.count) do |progress|
-      packages.each do |package|
+      packages.find_each do |package|
         begin
           begin
             # Pass `repo` to prevent GitHub service from trying to find it again,
