@@ -29,7 +29,7 @@ const PackageReadme = React.createClass({
             </span>
           </div>
 
-          <a className={styles.externalLink} href={this.externalLink()}>
+          <a className={styles.externalLink} href={this.externalLink()} target='_blank'>
             View on GitHub <Icon type='github' />
           </a>
         </div>
