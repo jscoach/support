@@ -3,3 +3,4 @@
 js-coach: rails server -p $PORT
 webpack: npm run webpack:dev -- --watch
 dev-server: npm run dev-server
+postgres: postgres -D /usr/local/var/postgres
