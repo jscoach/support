@@ -211,7 +211,7 @@ GEM
     net-http-persistent (2.9.4)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
-    net-ssh (3.0.2)
+    net-ssh (4.2.0)
     nokogiri (1.8.1)
       mini_portile2 (~> 2.3.0)
     ntlm-http (0.1.1)
@@ -306,7 +306,7 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    sshkit (1.8.1)
+    sshkit (1.15.0)
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
     state_machines (0.4.0)
@@ -413,4 +413,4 @@ DEPENDENCIES
   whenever
 
 BUNDLED WITH
-   1.14.6
+   1.16.0.pre.3
