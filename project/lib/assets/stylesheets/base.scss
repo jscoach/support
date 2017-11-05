@@ -51,7 +51,7 @@
 
   /* We convert headings into anchored hyperlinks, but hide it visually for now */
   h1, h2, h3, h4, h5, h6 {
-    a {
+    a[href^="#"] {
       color: inherit;
     }
     a:hover,
