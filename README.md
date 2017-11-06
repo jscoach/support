@@ -1,4 +1,4 @@
-<img alt="jess" src="https://js.coach/banner.png" width="414" height="114">
+<img alt="jess" src="/project/public/banner.png" width="414" height="114">
 
 Libraries come and go. The ecosystem evolves rapidly, and that's a good thing. But it means you can't rely on your bookmarks. Google may not be your best friend either, since it focuses on popular results — established solutions that may not be the best fit for your project.
 
