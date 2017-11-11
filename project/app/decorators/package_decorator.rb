@@ -43,7 +43,7 @@ class PackageDecorator < Draper::Decorator
   end
 
   # @return A tweet about the package or nil if there isn't a description
-  def to_tweet(linkLength: 23, tweetMaxLength: 140)
+  def to_tweet(linkLength: 23, tweetMaxLength: 280)
     return if self.description.include? DESCRIPTION_UNAVAILABLE
 
     head = "🆕 #{ self.name }:"
