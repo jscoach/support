@@ -16,14 +16,14 @@ namespace :app do
     if args[:yesterday].blank?
       # If a param is not provided, update packages with collections that have
       # not been updated the longest for 1 hour
-      packages = packages.with_collections.order("packages.updated_at asc")
+      packages = packages.with_collections.order("packages.updated_at asc").limit(1000)
     else
       # If a param is provided, update packages created yesterday
       packages = packages.where("packages.created_at >= ?", Time.now.beginning_of_day - 1.day)
     end
 
     Task.new(packages.count) do |progress|
-      packages.find_each do |package|
+      packages.each do |package|
         begin
           begin
             # Pass `repo` to prevent GitHub service from trying to find it again,
