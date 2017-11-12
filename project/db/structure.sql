@@ -2,12 +2,16 @@
 -- PostgreSQL database dump
 --
 
+-- Dumped from database version 9.5.9
+-- Dumped by pg_dump version 9.5.9
+
 SET statement_timeout = 0;
 SET lock_timeout = 0;
 SET client_encoding = 'UTF8';
 SET standard_conforming_strings = on;
 SET check_function_bodies = false;
 SET client_min_messages = warning;
+SET row_security = off;
 
 --
 -- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: -
@@ -30,7 +34,7 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
--- Name: categories; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+-- Name: categories; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE categories (
@@ -64,7 +68,7 @@ ALTER SEQUENCE categories_id_seq OWNED BY categories.id;
 
 
 --
--- Name: categories_packages; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+-- Name: categories_packages; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE categories_packages (
@@ -74,7 +78,7 @@ CREATE TABLE categories_packages (
 
 
 --
--- Name: collections; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+-- Name: collections; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE collections (
@@ -108,7 +112,7 @@ ALTER SEQUENCE collections_id_seq OWNED BY collections.id;
 
 
 --
--- Name: collections_packages; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+-- Name: collections_packages; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE collections_packages (
@@ -118,7 +122,7 @@ CREATE TABLE collections_packages (
 
 
 --
--- Name: filters; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+-- Name: filters; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE filters (
@@ -152,7 +156,7 @@ ALTER SEQUENCE filters_id_seq OWNED BY filters.id;
 
 
 --
--- Name: filters_packages; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+-- Name: filters_packages; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE filters_packages (
@@ -162,7 +166,7 @@ CREATE TABLE filters_packages (
 
 
 --
--- Name: packages; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+-- Name: packages; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE packages (
@@ -221,7 +225,7 @@ ALTER SEQUENCE packages_id_seq OWNED BY packages.id;
 
 
 --
--- Name: schema_migrations; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+-- Name: schema_migrations; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE schema_migrations (
@@ -230,7 +234,7 @@ CREATE TABLE schema_migrations (
 
 
 --
--- Name: subscribers; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+-- Name: subscribers; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE subscribers (
@@ -261,7 +265,7 @@ ALTER SEQUENCE subscribers_id_seq OWNED BY subscribers.id;
 
 
 --
--- Name: users; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+-- Name: users; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE users (
@@ -343,7 +347,7 @@ ALTER TABLE ONLY users ALTER COLUMN id SET DEFAULT nextval('users_id_seq'::regcl
 
 
 --
--- Name: categories_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+-- Name: categories_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY categories
@@ -351,7 +355,7 @@ ALTER TABLE ONLY categories
 
 
 --
--- Name: collections_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+-- Name: collections_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY collections
@@ -359,7 +363,7 @@ ALTER TABLE ONLY collections
 
 
 --
--- Name: filters_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+-- Name: filters_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY filters
@@ -367,7 +371,7 @@ ALTER TABLE ONLY filters
 
 
 --
--- Name: packages_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+-- Name: packages_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY packages
@@ -375,7 +379,7 @@ ALTER TABLE ONLY packages
 
 
 --
--- Name: subscribers_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+-- Name: subscribers_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY subscribers
@@ -383,7 +387,7 @@ ALTER TABLE ONLY subscribers
 
 
 --
--- Name: users_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+-- Name: users_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY users
@@ -391,189 +395,196 @@ ALTER TABLE ONLY users
 
 
 --
--- Name: index_categories_on_collection_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: index_categories_on_collection_id; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE INDEX index_categories_on_collection_id ON categories USING btree (collection_id);
 
 
 --
--- Name: index_categories_on_name; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: index_categories_on_name; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE INDEX index_categories_on_name ON categories USING btree (name);
 
 
 --
--- Name: index_categories_on_name_and_collection_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: index_categories_on_name_and_collection_id; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE UNIQUE INDEX index_categories_on_name_and_collection_id ON categories USING btree (name, collection_id);
 
 
 --
--- Name: index_categories_on_slug; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: index_categories_on_slug; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE INDEX index_categories_on_slug ON categories USING btree (slug);
 
 
 --
--- Name: index_categories_on_slug_and_collection_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: index_categories_on_slug_and_collection_id; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE UNIQUE INDEX index_categories_on_slug_and_collection_id ON categories USING btree (slug, collection_id);
 
 
 --
--- Name: index_categories_packages_on_category_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: index_categories_packages_on_category_id; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE INDEX index_categories_packages_on_category_id ON categories_packages USING btree (category_id);
 
 
 --
--- Name: index_categories_packages_on_package_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: index_categories_packages_on_package_id; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE INDEX index_categories_packages_on_package_id ON categories_packages USING btree (package_id);
 
 
 --
--- Name: index_categories_packages_on_package_id_and_category_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: index_categories_packages_on_package_id_and_category_id; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE UNIQUE INDEX index_categories_packages_on_package_id_and_category_id ON categories_packages USING btree (package_id, category_id);
 
 
 --
--- Name: index_collections_on_name; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: index_collections_on_name; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE UNIQUE INDEX index_collections_on_name ON collections USING btree (name);
 
 
 --
--- Name: index_collections_on_slug; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: index_collections_on_slug; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE UNIQUE INDEX index_collections_on_slug ON collections USING btree (slug);
 
 
 --
--- Name: index_collections_packages_on_collection_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: index_collections_packages_on_collection_id; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE INDEX index_collections_packages_on_collection_id ON collections_packages USING btree (collection_id);
 
 
 --
--- Name: index_collections_packages_on_collection_id_and_package_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: index_collections_packages_on_collection_id_and_package_id; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE UNIQUE INDEX index_collections_packages_on_collection_id_and_package_id ON collections_packages USING btree (collection_id, package_id);
 
 
 --
--- Name: index_collections_packages_on_package_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: index_collections_packages_on_package_id; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE INDEX index_collections_packages_on_package_id ON collections_packages USING btree (package_id);
 
 
 --
--- Name: index_filters_on_collection_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: index_filters_on_collection_id; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE INDEX index_filters_on_collection_id ON filters USING btree (collection_id);
 
 
 --
--- Name: index_filters_on_name; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: index_filters_on_name; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE INDEX index_filters_on_name ON filters USING btree (name);
 
 
 --
--- Name: index_filters_on_name_and_collection_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: index_filters_on_name_and_collection_id; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE UNIQUE INDEX index_filters_on_name_and_collection_id ON filters USING btree (name, collection_id);
 
 
 --
--- Name: index_filters_on_slug; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: index_filters_on_slug; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE INDEX index_filters_on_slug ON filters USING btree (slug);
 
 
 --
--- Name: index_filters_on_slug_and_collection_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: index_filters_on_slug_and_collection_id; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE UNIQUE INDEX index_filters_on_slug_and_collection_id ON filters USING btree (slug, collection_id);
 
 
 --
--- Name: index_filters_packages_on_filter_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: index_filters_packages_on_filter_id; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE INDEX index_filters_packages_on_filter_id ON filters_packages USING btree (filter_id);
 
 
 --
--- Name: index_filters_packages_on_filter_id_and_package_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: index_filters_packages_on_filter_id_and_package_id; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE UNIQUE INDEX index_filters_packages_on_filter_id_and_package_id ON filters_packages USING btree (filter_id, package_id);
 
 
 --
--- Name: index_filters_packages_on_package_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: index_filters_packages_on_package_id; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE INDEX index_filters_packages_on_package_id ON filters_packages USING btree (package_id);
 
 
 --
--- Name: index_packages_on_name; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: index_packages_on_name; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE UNIQUE INDEX index_packages_on_name ON packages USING btree (name);
 
 
 --
--- Name: index_packages_on_state; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: index_packages_on_slug; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX index_packages_on_slug ON packages USING btree (slug);
+
+
+--
+-- Name: index_packages_on_state; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE INDEX index_packages_on_state ON packages USING btree (state);
 
 
 --
--- Name: index_users_on_email; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: index_users_on_email; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE UNIQUE INDEX index_users_on_email ON users USING btree (email);
 
 
 --
--- Name: index_users_on_reset_password_token; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: index_users_on_reset_password_token; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE UNIQUE INDEX index_users_on_reset_password_token ON users USING btree (reset_password_token);
 
 
 --
--- Name: packages_search; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: packages_search; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE INDEX packages_search ON packages USING gin (((((to_tsvector('english'::regconfig, COALESCE((name)::text, ''::text)) || to_tsvector('english'::regconfig, COALESCE(original_description, ''::text))) || to_tsvector('english'::regconfig, COALESCE((original_repo)::text, ''::text))) || to_tsvector('english'::regconfig, COALESCE((keywords)::text, ''::text)))));
 
 
 --
--- Name: unique_schema_migrations; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: unique_schema_migrations; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE UNIQUE INDEX unique_schema_migrations ON schema_migrations USING btree (version);
@@ -599,7 +610,7 @@ ALTER TABLE ONLY filters
 -- PostgreSQL database dump complete
 --
 
-SET search_path TO "$user",public;
+SET search_path TO "$user", public;
 
 INSERT INTO schema_migrations (version) VALUES ('20151126104942');
 
@@ -660,3 +671,6 @@ INSERT INTO schema_migrations (version) VALUES ('20160117234848');
 INSERT INTO schema_migrations (version) VALUES ('20160124163600');
 
 INSERT INTO schema_migrations (version) VALUES ('20171112120439');
+
+INSERT INTO schema_migrations (version) VALUES ('20171112152433');
+
