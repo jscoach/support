@@ -55,6 +55,7 @@ class PackagesController < ApplicationController
       ) : []),
       packages: decorated_packages.as_json({
         only: [
+          :slug,
           :name,
           :repo,
           :description,
@@ -93,6 +94,7 @@ class PackagesController < ApplicationController
   def show_json
     decorated_package.as_json({
       only: [
+        :slug,
         :name,
         :repo,
         :readme

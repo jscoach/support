@@ -196,7 +196,8 @@ CREATE TABLE packages (
     last_fetched timestamp without time zone,
     tweeted boolean DEFAULT false,
     dependents integer,
-    hidden boolean DEFAULT false
+    hidden boolean DEFAULT false,
+    slug character varying NOT NULL
 );
 
 
@@ -658,3 +659,4 @@ INSERT INTO schema_migrations (version) VALUES ('20160117234848');
 
 INSERT INTO schema_migrations (version) VALUES ('20160124163600');
 
+INSERT INTO schema_migrations (version) VALUES ('20171112120439');

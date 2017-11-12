@@ -8,8 +8,9 @@ module NPM
     LAUNCH_DATE = Date.new(2010, 12, 15)
 
     # Gets the full manifest of a package from NPM
+    # Encode the "/" but not the "@" for compability with scoped packages (eg: "@storybook/react")
     def fetch_package_manifest(name, agent: URLHelpers.default_agent)
-      JSON.parse agent.get("#{ REGISTRY_DOMAIN }/#{ name }").body
+      JSON.parse agent.get("#{ REGISTRY_DOMAIN }/#{ name.gsub("/", "%2F") }").body
     end
 
     # @return integer representing number downloads from last week

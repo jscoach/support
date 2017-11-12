@@ -19,6 +19,7 @@ const PackageItem = React.createClass({
     relative_published_at: React.PropTypes.string.isRequired,
     repo_user: React.PropTypes.string.isRequired,
     repo: React.PropTypes.string.isRequired,
+    slug: React.PropTypes.string.isRequired,
     sort: React.PropTypes.string.isRequired,
     stars: React.PropTypes.number.isRequired
   },
@@ -80,7 +81,7 @@ const PackageItem = React.createClass({
       e.preventDefault()
 
       this.context.history.push({
-        pathname: `/${ this.currentCollection() }/${ this.props.name }`,
+        pathname: `/${ this.currentCollection() }/${ this.props.slug }`,
         search: this.context.location.search
       })
     }

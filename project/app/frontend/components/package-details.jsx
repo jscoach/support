@@ -18,7 +18,8 @@ const PackageDetails = React.createClass({
     repo: React.PropTypes.string,
     relative_modified_at: React.PropTypes.string,
     relative_published_at: React.PropTypes.string,
-    humanized_collections: React.PropTypes.string
+    humanized_collections: React.PropTypes.string,
+    slug: React.PropTypes.string
   },
   getInitialState () {
     return {
@@ -30,7 +31,8 @@ const PackageDetails = React.createClass({
       repo: this.props.repo,
       relative_modified_at: this.props.relative_modified_at,
       relative_published_at: this.props.relative_published_at,
-      humanized_collections: this.props.humanized_collections
+      humanized_collections: this.props.humanized_collections,
+      slug: this.props.slug
     }
   },
   render () {
@@ -64,7 +66,7 @@ const PackageDetails = React.createClass({
   },
   componentWillMount () {
     // When the user changes collections, the component is remounted
-    if (this.state.name !== this.props.params.packageId) {
+    if (this.state.slug !== this.props.params.packageId) {
       this.setState({ loading: true, hasContent: false })
       this.fetchPackageDetails(this.props.params.collectionId, this.props.params.packageId)
     }

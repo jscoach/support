@@ -6,7 +6,7 @@ class Package < ActiveRecord::Base
 
   extend FriendlyId
 
-  friendly_id :name, use: [:slugged, :finders], slug_column: 'name'
+  friendly_id :name, use: [:slugged, :finders], slug_column: 'slug'
 
   has_and_belongs_to_many :collections, uniq: true
   has_and_belongs_to_many :filters, uniq: true
@@ -46,7 +46,7 @@ class Package < ActiveRecord::Base
 
   # Override the default slug generation
   def normalize_friendly_id(string)
-    name
+    name.gsub("/", "-")
   end
 
   def assign_collections!
