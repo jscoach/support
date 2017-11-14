@@ -12,11 +12,12 @@ Feature suggestions and other kinds of feedback are also welcomed.
 ### Contributors
 
 This project exists thanks to all the people who contribute, either submitting new packages or with code. [Contribute](CONTRIBUTING.md).
+
 <a href="graphs/contributors"><img src="https://opencollective.com/js-coach/contributors.svg?width=890" /></a>
 
 ### Backers
 
-Thank you to all our backers! 🙏 [Become a backer](https://opencollective.com/js-coach#backer).
+Thank you to all our backers! [Become a backer](https://opencollective.com/js-coach#backer).
 
 <a href="https://opencollective.com/js-coach#backers" target="_blank"><img src="https://opencollective.com/js-coach/backers.svg?width=890"></a>
 
@@ -24,7 +25,6 @@ Thank you to all our backers! 🙏 [Become a backer](https://opencollective.com/
 
 Support JS.coach by becoming a sponsor. Your logo will show up here with a link to your site. [Become a sponsor](https://opencollective.com/js-coach#sponsor).
 
-<a href="https://opencollective.com/js-coach/sponsor/0/website" target="_blank"><img src="https://opencollective.com/js-coach/sponsor/0/avatar.svg"></a>
 <a href="https://opencollective.com/js-coach/sponsor/1/website" target="_blank"><img src="https://opencollective.com/js-coach/sponsor/1/avatar.svg"></a>
 <a href="https://opencollective.com/js-coach/sponsor/2/website" target="_blank"><img src="https://opencollective.com/js-coach/sponsor/2/avatar.svg"></a>
 <a href="https://opencollective.com/js-coach/sponsor/3/website" target="_blank"><img src="https://opencollective.com/js-coach/sponsor/3/avatar.svg"></a>
