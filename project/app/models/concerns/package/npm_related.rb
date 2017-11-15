@@ -3,7 +3,7 @@ class Package < ActiveRecord::Base
     extend ActiveSupport::Concern
 
     # Update the attributes of a package using a given object from NPM
-    # @param Object with info from NPM's `all`, `today`, `yesterday` or single package API
+    # @param Object with info from NPM's API
     # NOTE: If a new value is `nil`, the existing value will not be updated
     def assign_npm_attributes(npm)
       self.assign_attributes({

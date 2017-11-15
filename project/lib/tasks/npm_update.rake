@@ -1,24 +1,24 @@
 require 'task_helper'
 
 namespace :app do
-  desc "Downloads, imports and updates packages created or updated yesterday"
-  task :npm_update_yesterday => :environment do |t, args|
-    Rake::Task["app:npm_file_download:yesterday"].invoke
+  desc "Downloads all packages and updates the new ones"
+  task :npm_update_new => :environment do |t, args|
+    Rake::Task["app:npm_file_download:all"].invoke
     Rake::Task["app:npm_file_import"].invoke
-    Rake::Task["app:npm_update"].invoke "yesterday"
+    Rake::Task["app:npm_update"].invoke "new"
   end
 
   desc "Update metadata (like version and stars) of packages"
-  task :npm_update, [ :yesterday ] => :environment do |t, args|
+  task :npm_update, [ :new ] => :environment do |t, args|
     packages = Package.without_state(:rejected)
     started_at = Time.now
 
-    if args[:yesterday].blank?
+    if args[:new].blank?
       # If a param is not provided, update packages with collections that have
       # not been updated the longest for 1 hour
       packages = packages.with_collections.order("packages.updated_at asc").limit(1000)
     else
-      # If a param is provided, update packages created yesterday
+      # If a param is provided, update packages created recently
       packages = packages.where("packages.created_at >= ?", Time.now.beginning_of_day - 1.day)
     end
 
@@ -50,7 +50,7 @@ namespace :app do
             JsCoach.warn "#{ package.name } not updated because: #{ errors }"
           end
 
-          if args[:yesterday].blank? and package.rejected?
+          if args[:new].blank? and package.rejected?
             JsCoach.warn "The existing #{ package.name } package was rejected."
           end
 
@@ -70,7 +70,7 @@ namespace :app do
 
         progress.increment! 1
 
-        if args[:yesterday].blank? and Time.now - started_at > 55*60
+        if args[:new].blank? and Time.now - started_at > 55*60
           JsCoach.info "This task already took 55 minutes, exiting..."
           break
         end

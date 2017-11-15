@@ -7,7 +7,7 @@ set :environment, ENV.fetch('RAILS_ENV', 'development')
 set :output, "#{ path }/log/cron.log"
 
 every :day, at: "13pm" do
-  rake "app:npm_update_yesterday"
+  rake "app:npm_update_new"
 end
 
 every 2.hours do

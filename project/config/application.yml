@@ -1,6 +1,4 @@
 npm:
   filename: "tmp/npm.json"
   api:
-    yesterday: "https://registry.npmjs.org/-/all/static/yesterday.json"
-    today: "https://registry.npmjs.org/-/all/static/today.json"
-    all: "https://registry.npmjs.org/-/all"
+    all: "https://raw.githubusercontent.com/nice-registry/all-the-package-names/master/names.json"

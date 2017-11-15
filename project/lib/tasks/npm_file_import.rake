@@ -5,25 +5,15 @@ namespace :app do
     Rails.configuration.app
   end
 
-  desc "Import packages downloaded from NPM to our database as `pending`"
+  desc "Import downloaded NPM package names to our database as `pending`"
   task :npm_file_import => :environment do |t|
     data = JSON.parse File.read(config.npm.filename)
 
     Task.new(data.size) do |progress|
-      data.each do |json|
+      data.each do |name|
         begin
-          npm = NPM::Package.new(json)
-
-          package = Package.find_or_initialize_by(name: npm.name)
-          package.assign_npm_attributes(npm)
-
-          unless package.auto_transition.save
-            errors = package.errors.full_messages.join('; ')
-            JsCoach.warn "#{ package.name } not imported because: #{ errors }"
-          end
-
+          Package.find_or_create_by(name: name)
           progress.increment! 1
-
         rescue SystemExit, Interrupt, Octokit::RateLimit
           JsCoach.warn "Task interrupted!"
           exit
