@@ -46,7 +46,7 @@ class PackageDecorator < Draper::Decorator
   def to_tweet(linkLength: 23, tweetMaxLength: 280)
     return if self.description.include? DESCRIPTION_UNAVAILABLE
 
-    head = "🆕 #{ self.name }:"
+    head = "#{ self.name.sub("@","") }:" # Remove @ from scoped names to prevent mentions
     desc = CGI.unescapeHTML self.description.gsub("\n", ' ').gsub(/\s+/, ' ').strip.sub(/\.$/, '')
     link = "https://github.com/#{ self.repo }"
     descMaxLength = tweetMaxLength - linkLength - head.length - 2 # spaces

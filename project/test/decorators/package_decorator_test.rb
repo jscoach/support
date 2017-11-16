@@ -49,10 +49,13 @@ describe "PackageDecorator" do
   describe "to_tweet" do
     it "generates a tweet about the package" do
       pkg = Package.new(name: "interpolate-components", repo: "Automattic/interpolate-components")
-      pkg.description = " A <module> & mixin to turn \n strings\n into structured **React** components without dangerouslyInsertInnerHTML. "
+      pkg.description = " A <module> & mixin to turn \n strings\n into structured **React** components without dangerouslyInsertInnerHTML. " +
+        "Cross Platform React Native component. Supports selecting a payment method, adding cards manually and using the camera. " +
+        "Notifies your app when the user is idle."
 
-      pkg.decorate.to_tweet.must_equal "🆕 interpolate-components: A <module> & mixin to turn strings into structured React " +
-        "components without dangerouslyIn… https://github.com/Automattic/interpolate-components"
+      pkg.decorate.to_tweet.must_equal "interpolate-components: A <module> & mixin to turn strings into structured React " +
+        "components without dangerouslyInsertInnerHTML. Cross Platform React Native component. Supports selecting a payment " +
+        "method, adding cards manually and using the camera. Notifie… https://github.com/Automattic/interpolate-components"
     end
 
     it "returns nil if there isn't a description" do
