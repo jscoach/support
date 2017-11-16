@@ -87,6 +87,10 @@ ActiveAdmin.register Package do
             row :collections do |resource|
               resource.collections.join(", ")
             end
+            row :public_link do |resource|
+              path = package_path(resource.collections.first, resource)
+              link_to path[1..-1], path if resource.published?
+            end
 
             row :repository do |resource|
               link_to resource.repo.to_s, resource.github_url if resource.repo.present?
