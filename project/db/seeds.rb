@@ -25,6 +25,7 @@ JsCoach.log "Default collections created or updated."
 Filter.find_or_create_by(collection: Collection.find("react"), name: "Inline Styles").update(position: 0)
 Filter.find_or_create_by(collection: Collection.find("react-native"), name: "iOS").update(position: 0)
 Filter.find_or_create_by(collection: Collection.find("react-native"), name: "Android").update(position: 1)
+Filter.find_or_create_by(collection: Collection.find("react-native"), name: "Windows").update(position: 2)
 
 JsCoach.log "Default filters created or updated."
 

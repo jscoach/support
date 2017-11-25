@@ -5,6 +5,10 @@ import Icon from './icon.jsx'
 
 import styles from './package-item.css'
 
+const toSentence = (arr) => (
+  arr.length > 1 ? arr.slice(0, arr.length - 1).join(', ') + " and " + arr.slice(-1) : arr[0]
+)
+
 const PackageItem = React.createClass({
   propTypes: {
     description: React.PropTypes.string.isRequired,
@@ -105,19 +109,22 @@ const PackageItem = React.createClass({
     switch (this.currentCollection()) {
       case 'react-native':
         // We check if it has platform filters because if it hasn't, it's pure JS and may work in both
-        let hasPlatformFilters = packageFilters.includes('android') || packageFilters.includes('ios')
+        let hasPlatformFilters = packageFilters.includes('android') || packageFilters.includes('ios') || packageFilters.includes('windows')
+        let notSupported = []
 
         if (hasPlatformFilters && !packageFilters.includes('android') && appliedFilters.includes('android')) {
-          warnings.push(
-            <div className={styles.filterWarning} key='filter-android'>
-              May not support Android
-            </div>
-          )
+          notSupported.push("Android")
         }
         if (hasPlatformFilters && !packageFilters.includes('ios') && appliedFilters.includes('ios')) {
+          notSupported.push("iOS")
+        }
+        if (hasPlatformFilters && !packageFilters.includes('windows') && appliedFilters.includes('windows')) {
+          notSupported.push("Windows")
+        }
+        if (notSupported.length > 0) {
           warnings.push(
-            <div className={styles.filterWarning} key='filter-ios'>
-              May not support iOS
+            <div className={styles.filterWarning} key='filter'>
+              May not support { toSentence(notSupported) }
             </div>
           )
         }
