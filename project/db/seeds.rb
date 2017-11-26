@@ -12,10 +12,11 @@ end
 # Create collections
 Collection.find_or_create_by(name: "React").update(position: 0)
 Collection.find_or_create_by(name: "React Native").update(position: 1)
-Collection.find_or_create_by(name: "Webpack").update(position: 2)
-Collection.find_or_create_by(name: "Browserify").update(position: 3)
-Collection.find_or_create_by(name: "Babel").update(position: 4)
-Collection.find_or_create_by(name: "PostCSS").update(position: 5)
+Collection.find_or_create_by(name: "React VR").update(position: 2)
+Collection.find_or_create_by(name: "Webpack").update(position: 3)
+Collection.find_or_create_by(name: "Browserify").update(position: 4)
+Collection.find_or_create_by(name: "Babel").update(position: 5)
+Collection.find_or_create_by(name: "PostCSS").update(position: 6)
 Collection.find_or_create_by(name: "Reactive").update(default: false)
 
 JsCoach.log "Default collections created or updated."
