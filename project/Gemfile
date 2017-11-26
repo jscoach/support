@@ -69,5 +69,5 @@ group :test do
   gem 'capybara' # Simulates how a user would interact with the app
   gem 'capybara_minitest_spec' # MiniTest expectations for Capybara
   gem 'poltergeist' # A PhantomJS driver for Capybara (requires `phantomjs` installation)
-  gem 'fakeweb' # A test helper for faking responses to web requests
+  gem 'fakeweb', github: "chrisk/fakeweb" # A test helper for faking responses to web requests
 end
