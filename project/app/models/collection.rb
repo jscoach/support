@@ -29,9 +29,10 @@ class Collection < ActiveRecord::Base
   private
 
   def self.assign_react_vr?(pkg)
-    deps = (pkg.manifest["dependencies"] || {}).keys
-    deps << (pkg.manifest["devDependencies"] || {}).keys
-    deps << (pkg.manifest["peerDependencies"] || {}).keys
+    manifest = pkg.manifest || {}
+    deps = manifest.fetch("dependencies", {}).keys
+    deps << manifest.fetch("devDependencies", {}).keys
+    deps << manifest.fetch("peerDependencies", {}).keys
 
     return true if deps.include? "react-vr"
     return true if [ pkg.name, pkg.description ].any? { |prop| prop.downcase =~ /react\-?vr\-/i }
