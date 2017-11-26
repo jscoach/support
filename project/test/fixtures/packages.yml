@@ -1,12 +1,14 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 pending:
-  name: Pending Package
+  name: pending-package
+  slug: pending-package
   state: pending
 
 <% 11.times do |i| %>
 published_<%= i+1 %>: &published_<%= i+1 %>
   name: package-<%= (i+1).to_s(16).upcase %>
+  slug: package-<%= (i+1).to_s(16).upcase %>
   state: published
   collections:
     - one
@@ -29,5 +31,6 @@ published_<%= i+1 %>: &published_<%= i+1 %>
 accepted_<%= i+1 %>:
   <<: *published_<%= i+1 %>
   name: accepted-package-<%= (i+1).to_s(16).upcase %>
+  slug: accepted-package-<%= (i+1).to_s(16).upcase %>
   state: accepted
 <% end %>
