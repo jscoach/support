@@ -13,7 +13,7 @@ We currently rely on the NPM registry to list packages. But please open this iss
 
 **What if the package's source is not hosted on GitHub?**
 
-We currently rely on GitHub to retrieve an updated README and stars. But please open this issue anyway and if another git hosting service becomes frequently asked, we'll consider supporting it.
+We currently rely on GitHub to retrieve an updated README and stars. But please open this issue anyway and if another git hosting service is frequently asked, we'll consider supporting it.
 
 **What if the `package.json` file doesn't include a link to GitHub?**
 
@@ -33,7 +33,7 @@ Other recommended actions besides creating this issue:
 
 Consider also opening a PR here: https://github.com/himynameisdave/postcss-plugins#submitting-a-new-plugin This community project defines a set of categories that we also use in this catalog.
 
-**If the package is a React Native package:**
+**If the package is compatible with React Native:**
 
 Consider also opening a PR here: https://github.com/react-community/native-directory#how-do-i-add-a-library We're adding the "works without detaching an Expo application" flag to this catalog.
 
