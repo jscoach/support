@@ -1,15 +1,23 @@
-<img alt="jess" src="/project/public/banner.png" width="414" height="114">
+<p align="center">
+  <a href="https://js.coach/">
+    <img alt="jess" src="https://raw.githubusercontent.com/dmfrancisco/jscoach-server/master/lib/assets/images/jess.svg" width="190" height="190">
+  </a>
+</p>
 
-JS.coach is a manually curated list of packages that are related to React, Webpack, Babel and PostCSS.
+<p align="center">
+  JS.coach is a manually curated list of packages related to React, Webpack, Babel and PostCSS.
+</p>
+
+---
 
 ### Getting started
 
-- [How do I add a package?]()
-- [How do I provide feedback, report a bug or make a feature request?]()
+- [How do I add a package?](CONTRIBUTING.md#how-do-i-add-a-package)
+- [How do I provide feedback, report a bug or make a feature request?](CONTRIBUTING.md#how-do-i-provide-feedback-report-a-bug-or-make-a-feature-request)
 
 ### Contributors
 
-This project exists thanks to all the people who contribute, either submitting new packages or with code.
+This project exists thanks to all the people who contribute, either by submitting packages or with code.
 
 [<img alt="rmdort" src="https://avatars0.githubusercontent.com/u/118231?v=4&s=68" width="34" />](https://github.com/rmdort)
 [<img alt="leofle" src="https://avatars0.githubusercontent.com/u/2674606?v=4&s=68" width="34" />](https://github.com/leofle)
