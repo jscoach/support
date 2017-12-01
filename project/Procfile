@@ -1,6 +1,0 @@
-# You can use this Procfile with the invoker (if you want a .dev domain) or foreman gems
-
-js-coach: rails server -p $PORT
-webpack: npm run webpack:dev -- --watch
-dev-server: npm run dev-server
-postgres: postgres -D /usr/local/var/postgres

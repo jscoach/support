@@ -1,9 +1,0 @@
-# Only consider application code for language stats.
-# Remove this before open source release.
-
-app/admin/* linguist-documentation
-bin/* linguist-documentation
-config/* linguist-documentation
-db/* linguist-documentation
-lib/* linguist-documentation
-test/* linguist-documentation

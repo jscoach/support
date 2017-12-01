@@ -1,4 +1,0 @@
-npm:
-  filename: "tmp/npm.json"
-  api:
-    all: "https://raw.githubusercontent.com/nice-registry/all-the-package-names/master/names.json"
