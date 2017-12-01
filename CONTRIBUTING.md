@@ -6,7 +6,14 @@ Please [open an issue](https://github.com/jscoach/support/issues/new) and simply
 
 ### How do I provide feedback, report a bug or make a feature request?
 
-Please [open an issue](https://github.com/jscoach/client/issues/new) in this repository instead.
+Simply [open an issue](https://github.com/jscoach/support/issues/new) in this repository.
+If you want to open a pull request, please submit it to the
+[client](https://github.com/jscoach/client) or [server](https://github.com/jscoach/server) repositories instead.
+
+### Where can I get the code that powers the website?
+
+The client source is available [here](https://github.com/jscoach/client) and the server [here](https://github.com/jscoach/server).
+The code that powered the old website is available [in this branch](https://github.com/jscoach/support/tree/classic/project).
 
 ---
 

@@ -36,7 +36,3 @@ Consider also opening a PR here: https://github.com/himynameisdave/postcss-plugi
 **If the package is compatible with React Native:**
 
 Consider also opening a PR here: https://github.com/react-community/native-directory#how-do-i-add-a-library We're adding the "works without detaching an Expo application" flag to this catalog.
-
----
-
-Found a bug or have feedback? Please open an issue here instead: https://github.com/jscoach/client

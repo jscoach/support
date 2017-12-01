@@ -14,6 +14,7 @@
 
 - [How do I add a package?](CONTRIBUTING.md#how-do-i-add-a-package)
 - [How do I provide feedback, report a bug or make a feature request?](CONTRIBUTING.md#how-do-i-provide-feedback-report-a-bug-or-make-a-feature-request)
+- [Where can I get the code that powers the website?](CONTRIBUTING.md#where-can-i-get-the-code-that-powers-the-website)
 
 ### Contributors
 
